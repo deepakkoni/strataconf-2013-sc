@@ -1,0 +1,12 @@
+# need to identify features from criminality module here
+Executor: gemini.extractor.executor.GeminiExecutor
+Extractors:
+  - criminality.offenses.NumOffenses
+  - criminality.offenses.OnlyTraffic
+  - criminality.person.NumBodyMarks
+  - criminality.person.HasTattoo
+  - criminality.person.IsMale
+  - criminality.person.HairColor
+  - criminality.person.EyeColor
+  - criminality.person.SkinColor
+

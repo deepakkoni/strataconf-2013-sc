@@ -1,0 +1,5 @@
+include *.txt
+include *.md
+recursive-include gemini *.json
+recursive-include gemini *.yaml
+recursive-include docs *.txt

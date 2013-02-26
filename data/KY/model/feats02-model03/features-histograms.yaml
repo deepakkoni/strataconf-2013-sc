@@ -1,0 +1,145 @@
+criminality.offenses.NumOffenses
+---
+fields:
+- {name: value, type: int}
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 2, value: 24}
+--- {count: 6, value: 25}
+--- {count: 2, value: 26}
+--- {count: 2, value: 27}
+--- {count: 7, value: 20}
+--- {count: 5, value: 21}
+--- {count: 5, value: 22}
+--- {count: 4, value: 23}
+--- {count: 1, value: 46}
+--- {count: 1, value: 48}
+--- {count: 2, value: 28}
+--- {count: 2, value: 29}
+--- {count: 7209, value: 1}
+--- {count: 1702, value: 3}
+--- {count: 3413, value: 2}
+--- {count: 534, value: 5}
+--- {count: 925, value: 4}
+--- {count: 201, value: 7}
+--- {count: 356, value: 6}
+--- {count: 119, value: 9}
+--- {count: 161, value: 8}
+--- {count: 45, value: 11}
+--- {count: 75, value: 10}
+--- {count: 27, value: 13}
+--- {count: 42, value: 12}
+--- {count: 22, value: 15}
+--- {count: 21, value: 14}
+--- {count: 11, value: 17}
+--- {count: 10, value: 16}
+--- {count: 5, value: 19}
+--- {count: 8, value: 18}
+--- {count: 1, value: 31}
+--- {count: 1, value: 36}
+--- {count: 1, value: 34}
+--- {count: 3, value: 33}
+--- {count: 1, value: 32}
+criminality.person.NumBodyMarks
+---
+fields:
+- {name: value, type: int}
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 14811, value: 1}
+--- {count: 29, value: 3}
+--- {count: 46, value: 2}
+--- {count: 15, value: 5}
+--- {count: 26, value: 4}
+--- {count: 2, value: 7}
+--- {count: 3, value: 6}
+criminality.person.HasTattoo
+---
+fields:
+- {name: value, type: boolean}
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 912, value: true}
+--- {count: 14020, value: false}
+criminality.offenses.OnlyTraffic
+---
+fields:
+- {name: value, type: boolean}
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 11855, value: false}
+--- {count: 3077, value: true}
+criminality.person.HairColor
+---
+fields:
+- name: value
+  type:
+    name: HairColors
+    symbols: [black, brown, gray, blond, red, other, unknown]
+    type: enum
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 493, value: other}
+--- {count: 842, value: blond}
+--- {count: 2420, value: black}
+--- {count: 5784, value: brown}
+--- {count: 550, value: gray}
+--- {count: 263, value: red}
+--- {count: 4580, value: unknown}
+criminality.person.EyeColor
+---
+fields:
+- name: value
+  type:
+    name: EyeColors
+    symbols: [black, brown, hazel, blue, green, other, unknown]
+    type: enum
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 269, value: other}
+--- {count: 66, value: black}
+--- {count: 4854, value: brown}
+--- {count: 3340, value: blue}
+--- {count: 1029, value: green}
+--- {count: 1232, value: hazel}
+--- {count: 4142, value: unknown}
+criminality.person.HairColor
+---
+fields:
+- name: value
+  type:
+    name: HairColors
+    symbols: [black, brown, gray, blond, red, other, unknown]
+    type: enum
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 493, value: other}
+--- {count: 842, value: blond}
+--- {count: 2420, value: black}
+--- {count: 5784, value: brown}
+--- {count: 550, value: gray}
+--- {count: 263, value: red}
+--- {count: 4580, value: unknown}
+criminality.person.SkinColor
+---
+fields:
+- name: value
+  type:
+    name: SkinColors
+    symbols: [dark, light, medium, other, unknown]
+    type: enum
+- {name: count, type: long}
+name: HistogramCounts
+type: record
+--- {count: 475, value: light}
+--- {count: 286, value: other}
+--- {count: 239, value: medium}
+--- {count: 115, value: dark}
+--- {count: 13817, value: unknown}

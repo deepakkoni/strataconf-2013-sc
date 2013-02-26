@@ -1,0 +1,539 @@
+FSpec:
+  criminality.offenses.NumOffenses: int
+  criminality.offenses.OnlyTraffic: boolean
+  criminality.person.EyeColor:
+    name: EyeColors
+    symbols: [black, brown, hazel, blue, green, other, unknown]
+    type: enum
+  criminality.person.HairColor:
+    name: HairColors
+    symbols: [black, brown, gray, blond, red, other, unknown]
+    type: enum
+  criminality.person.HasTattoo: boolean
+  criminality.person.IsMale: boolean
+  criminality.person.NumBodyMarks: int
+  criminality.person.SkinColor:
+    name: SkinColors
+    symbols: [dark, light, medium, other, unknown]
+    type: enum
+Model: arboretum.adtree.Model
+Params:
+  Class: Predictor
+  ID: R
+  Score: 0.7328251938168475
+  children:
+  - Class: Splitter
+    ID: R.0
+    Key: criminality.person.HairColor
+    Operator: Equality
+    Val: unknown
+    children:
+    - Class: Predictor
+      ID: R.0:0
+      Score: 1.0099046119391457
+      children:
+      - Class: Splitter
+        ID: R.0:0.0
+        Key: criminality.person.EyeColor
+        Operator: Equality
+        Val: hazel
+        children:
+        - {Class: Predictor, ID: 'R.0:0.0:0', Score: 1.7165058048582043}
+        - Class: Predictor
+          ID: R.0:0.0:1
+          Score: 0.009775344581034615
+          children:
+          - Class: Splitter
+            ID: R.0:0.0:1.0
+            Key: criminality.person.EyeColor
+            Operator: Equality
+            Val: green
+            children:
+            - {Class: Predictor, ID: 'R.0:0.0:1.0:0', Score: 1.631749910649561}
+            - {Class: Predictor, ID: 'R.0:0.0:1.0:1', Score: -0.005346892011412005}
+      - Class: Splitter
+        ID: R.0:0.1
+        Key: criminality.person.EyeColor
+        Operator: Equality
+        Val: brown
+        children:
+        - Class: Predictor
+          ID: R.0:0.1:0
+          Score: -0.2752816259058482
+          children:
+          - Class: Splitter
+            ID: R.0:0.1:0.0
+            Key: criminality.person.IsMale
+            Operator: Equality
+            Val: false
+            children:
+            - {Class: Predictor, ID: 'R.0:0.1:0.0:0', Score: 1.5986381139376211}
+            - Class: Predictor
+              ID: R.0:0.1:0.0:1
+              Score: -0.10463448737819248
+              children:
+              - Class: Splitter
+                ID: R.0:0.1:0.0:1.0
+                Key: criminality.person.SkinColor
+                Operator: Equality
+                Val: unknown
+                children:
+                - {Class: Predictor, ID: 'R.0:0.1:0.0:1.0:0', Score: 0.06522883537663049}
+                - {Class: Predictor, ID: 'R.0:0.1:0.0:1.0:1', Score: -1.3613204413897932}
+        - {Class: Predictor, ID: 'R.0:0.1:1', Score: 0.01935725984396019}
+    - Class: Predictor
+      ID: R.0:1
+      Score: -0.20314428545969512
+      children:
+      - Class: Splitter
+        ID: R.0:1.0
+        Key: criminality.offenses.OnlyTraffic
+        Operator: Equality
+        Val: true
+        children:
+        - Class: Predictor
+          ID: R.0:1.0:0
+          Score: -0.4724081308069959
+          children:
+          - Class: Splitter
+            ID: R.0:1.0:0.0
+            Key: criminality.person.HairColor
+            Operator: Equality
+            Val: gray
+            children:
+            - {Class: Predictor, ID: 'R.0:1.0:0.0:0', Score: -0.3632612364769726}
+            - {Class: Predictor, ID: 'R.0:1.0:0.0:1', Score: 0.07276394690492397}
+          - Class: Splitter
+            ID: R.0:1.0:0.1
+            Key: criminality.offenses.NumOffenses
+            Operator: <
+            Val: 3.5
+            children:
+            - {Class: Predictor, ID: 'R.0:1.0:0.1:0', Score: 0.01676966548527462}
+            - {Class: Predictor, ID: 'R.0:1.0:0.1:1', Score: -0.427448592879207}
+          - Class: Splitter
+            ID: R.0:1.0:0.2
+            Key: criminality.person.NumBodyMarks
+            Operator: <
+            Val: 1.5
+            children:
+            - Class: Predictor
+              ID: R.0:1.0:0.2:0
+              Score: -0.003587585382700639
+              children:
+              - Class: Splitter
+                ID: R.0:1.0:0.2:0.0
+                Key: criminality.person.SkinColor
+                Operator: Equality
+                Val: other
+                children:
+                - {Class: Predictor, ID: 'R.0:1.0:0.2:0.0:0', Score: 1.361875945630108}
+                - {Class: Predictor, ID: 'R.0:1.0:0.2:0.0:1', Score: -0.005067354594421278}
+            - {Class: Predictor, ID: 'R.0:1.0:0.2:1', Score: 1.5770107189490352}
+        - Class: Predictor
+          ID: R.0:1.0:1
+          Score: 0.16352498705431173
+          children:
+          - Class: Splitter
+            ID: R.0:1.0:1.0
+            Key: criminality.person.EyeColor
+            Operator: Equality
+            Val: unknown
+            children:
+            - Class: Predictor
+              ID: R.0:1.0:1.0:0
+              Score: 1.568113191088773
+              children:
+              - Class: Splitter
+                ID: R.0:1.0:1.0:0.0
+                Key: criminality.person.IsMale
+                Operator: Equality
+                Val: false
+                children:
+                - {Class: Predictor, ID: 'R.0:1.0:1.0:0.0:0', Score: -0.5923398273916198}
+                - {Class: Predictor, ID: 'R.0:1.0:1.0:0.0:1', Score: 1.4268496642717376}
+            - {Class: Predictor, ID: 'R.0:1.0:1.0:1', Score: -0.020848287212446876}
+          - Class: Splitter
+            ID: R.0:1.0:1.1
+            Key: criminality.offenses.NumOffenses
+            Operator: <
+            Val: 3.5
+            children:
+            - Class: Predictor
+              ID: R.0:1.0:1.1:0
+              Score: -0.04200205793738535
+              children:
+              - Class: Splitter
+                ID: R.0:1.0:1.1:0.0
+                Key: criminality.person.SkinColor
+                Operator: Equality
+                Val: dark
+                children:
+                - {Class: Predictor, ID: 'R.0:1.0:1.1:0.0:0', Score: 1.8383250101763706}
+                - Class: Predictor
+                  ID: R.0:1.0:1.1:0.0:1
+                  Score: -0.0026627161348089026
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.0:1.1:0.0:1.0
+                    Key: criminality.person.EyeColor
+                    Operator: Equality
+                    Val: blue
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.0:1.1:0.0:1.0:0', Score: 0.07286493133246737}
+                    - Class: Predictor
+                      ID: R.0:1.0:1.1:0.0:1.0:1
+                      Score: -0.030900818635425334
+                      children:
+                      - Class: Splitter
+                        ID: R.0:1.0:1.1:0.0:1.0:1.0
+                        Key: criminality.person.HairColor
+                        Operator: Equality
+                        Val: other
+                        children:
+                        - {Class: Predictor, ID: 'R.0:1.0:1.1:0.0:1.0:1.0:0', Score: -0.23590356178779834}
+                        - {Class: Predictor, ID: 'R.0:1.0:1.1:0.0:1.0:1.0:1', Score: 0.00920906046639631}
+              - Class: Splitter
+                ID: R.0:1.0:1.1:0.1
+                Key: criminality.person.HairColor
+                Operator: Equality
+                Val: black
+                children:
+                - {Class: Predictor, ID: 'R.0:1.0:1.1:0.1:0', Score: 0.08307236479758556}
+                - {Class: Predictor, ID: 'R.0:1.0:1.1:0.1:1', Score: -0.028389162075251904}
+            - Class: Predictor
+              ID: R.0:1.0:1.1:1
+              Score: 0.1099573820301886
+              children:
+              - Class: Splitter
+                ID: R.0:1.0:1.1:1.0
+                Key: criminality.person.NumBodyMarks
+                Operator: <
+                Val: 1.5
+                children:
+                - {Class: Predictor, ID: 'R.0:1.0:1.1:1.0:0', Score: 0.024422969476636164}
+                - {Class: Predictor, ID: 'R.0:1.0:1.1:1.0:1', Score: 1.5315353763835322}
+              - Class: Splitter
+                ID: R.0:1.0:1.1:1.1
+                Key: criminality.person.SkinColor
+                Operator: Equality
+                Val: other
+                children:
+                - Class: Predictor
+                  ID: R.0:1.0:1.1:1.1:0
+                  Score: 0.7370608029597029
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.0:1.1:1.1:0.0
+                    Key: criminality.person.EyeColor
+                    Operator: Equality
+                    Val: hazel
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.0:1.1:1.1:0.0:0', Score: -0.7889216588394502}
+                    - {Class: Predictor, ID: 'R.0:1.0:1.1:1.1:0.0:1', Score: 1.3827606803525634}
+                - {Class: Predictor, ID: 'R.0:1.0:1.1:1.1:1', Score: -0.002010087558024278}
+      - Class: Splitter
+        ID: R.0:1.1
+        Key: criminality.person.SkinColor
+        Operator: Equality
+        Val: unknown
+        children:
+        - Class: Predictor
+          ID: R.0:1.1:0
+          Score: -0.06286118711398453
+          children:
+          - Class: Splitter
+            ID: R.0:1.1:0.0
+            Key: criminality.person.HasTattoo
+            Operator: Equality
+            Val: true
+            children:
+            - Class: Predictor
+              ID: R.0:1.1:0.0:0
+              Score: 1.2774589526026132
+              children:
+              - Class: Splitter
+                ID: R.0:1.1:0.0:0.0
+                Key: criminality.person.NumBodyMarks
+                Operator: <
+                Val: 1.5
+                children:
+                - Class: Predictor
+                  ID: R.0:1.1:0.0:0.0:0
+                  Score: 0.17631512564978458
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.1:0.0:0.0:0.0
+                    Key: criminality.offenses.NumOffenses
+                    Operator: <
+                    Val: 8.5
+                    children:
+                    - Class: Predictor
+                      ID: R.0:1.1:0.0:0.0:0.0:0
+                      Score: 0.15509093865115786
+                      children:
+                      - Class: Splitter
+                        ID: R.0:1.1:0.0:0.0:0.0:0.0
+                        Key: criminality.person.EyeColor
+                        Operator: Equality
+                        Val: blue
+                        children:
+                        - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.0:0', Score: 2.0606530750494048}
+                        - Class: Predictor
+                          ID: R.0:1.1:0.0:0.0:0.0:0.0:1
+                          Score: -0.21138125475301775
+                          children:
+                          - Class: Splitter
+                            ID: R.0:1.1:0.0:0.0:0.0:0.0:1.0
+                            Key: criminality.person.HairColor
+                            Operator: Equality
+                            Val: black
+                            children:
+                            - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.0:1.0:0',
+                              Score: 1.8681472197262396}
+                            - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.0:1.0:1',
+                              Score: -0.1720200840710908}
+                      - Class: Splitter
+                        ID: R.0:1.1:0.0:0.0:0.0:0.1
+                        Key: criminality.offenses.NumOffenses
+                        Operator: <
+                        Val: 4.5
+                        children:
+                        - Class: Predictor
+                          ID: R.0:1.1:0.0:0.0:0.0:0.1:0
+                          Score: 0.033698529437647014
+                          children:
+                          - Class: Splitter
+                            ID: R.0:1.1:0.0:0.0:0.0:0.1:0.0
+                            Key: criminality.person.HairColor
+                            Operator: Equality
+                            Val: red
+                            children:
+                            - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.1:0.0:0',
+                              Score: -1.2866451799406162}
+                            - Class: Predictor
+                              ID: R.0:1.1:0.0:0.0:0.0:0.1:0.0:1
+                              Score: 0.09435603751477072
+                              children:
+                              - Class: Splitter
+                                ID: R.0:1.1:0.0:0.0:0.0:0.1:0.0:1.0
+                                Key: criminality.person.EyeColor
+                                Operator: Equality
+                                Val: hazel
+                                children:
+                                - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.1:0.0:1.0:0',
+                                  Score: 1.6281269079915042}
+                                - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.1:0.0:1.0:1',
+                                  Score: -0.13025214357862655}
+                        - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:0.1:1', Score: 1.3870666691954996}
+                    - Class: Predictor
+                      ID: R.0:1.1:0.0:0.0:0.0:1
+                      Score: -0.9516931212548682
+                      children:
+                      - Class: Splitter
+                        ID: R.0:1.1:0.0:0.0:0.0:1.0
+                        Key: criminality.person.HairColor
+                        Operator: Equality
+                        Val: brown
+                        children:
+                        - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:1.0:0', Score: 1.4218806782460325}
+                        - Class: Predictor
+                          ID: R.0:1.1:0.0:0.0:0.0:1.0:1
+                          Score: -0.6494857398264223
+                          children:
+                          - Class: Splitter
+                            ID: R.0:1.1:0.0:0.0:0.0:1.0:1.0
+                            Key: criminality.person.EyeColor
+                            Operator: Equality
+                            Val: brown
+                            children:
+                            - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:1.0:1.0:0',
+                              Score: 1.1763734221572828}
+                            - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:0.0:1.0:1.0:1',
+                              Score: -0.8478035853455208}
+                - Class: Predictor
+                  ID: R.0:1.1:0.0:0.0:1
+                  Score: -0.556094123071267
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.1:0.0:0.0:1.0
+                    Key: criminality.person.NumBodyMarks
+                    Operator: <
+                    Val: 3.5
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:1.0:0', Score: -0.26588292600326535}
+                    - {Class: Predictor, ID: 'R.0:1.1:0.0:0.0:1.0:1', Score: 1.5363988353505535}
+            - Class: Predictor
+              ID: R.0:1.1:0.0:1
+              Score: -0.03950701174710116
+              children:
+              - Class: Splitter
+                ID: R.0:1.1:0.0:1.0
+                Key: criminality.person.HairColor
+                Operator: Equality
+                Val: blond
+                children:
+                - {Class: Predictor, ID: 'R.0:1.1:0.0:1.0:0', Score: -0.14229504414239383}
+                - {Class: Predictor, ID: 'R.0:1.1:0.0:1.0:1', Score: 0.018669420569334273}
+        - Class: Predictor
+          ID: R.0:1.1:1
+          Score: 1.0590502087991642
+          children:
+          - Class: Splitter
+            ID: R.0:1.1:1.0
+            Key: criminality.offenses.NumOffenses
+            Operator: <
+            Val: 6.5
+            children:
+            - Class: Predictor
+              ID: R.0:1.1:1.0:0
+              Score: 0.05992232199017272
+              children:
+              - Class: Splitter
+                ID: R.0:1.1:1.0:0.0
+                Key: criminality.person.SkinColor
+                Operator: Equality
+                Val: dark
+                children:
+                - {Class: Predictor, ID: 'R.0:1.1:1.0:0.0:0', Score: 1.5570209594937356}
+                - Class: Predictor
+                  ID: R.0:1.1:1.0:0.0:1
+                  Score: -0.029300362224710542
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.1:1.0:0.0:1.0
+                    Key: criminality.offenses.NumOffenses
+                    Operator: <
+                    Val: 5.5
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:0.0:1.0:0', Score: -0.0273991325219121}
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:0.0:1.0:1', Score: 1.4835171084495906}
+                  - Class: Splitter
+                    ID: R.0:1.1:1.0:0.0:1.1
+                    Key: criminality.person.HairColor
+                    Operator: Equality
+                    Val: red
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:0.0:1.1:0', Score: 1.404015267745864}
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:0.0:1.1:1', Score: -0.010056328918500184}
+            - Class: Predictor
+              ID: R.0:1.1:1.0:1
+              Score: -0.45022165757422966
+              children:
+              - Class: Splitter
+                ID: R.0:1.1:1.0:1.0
+                Key: criminality.offenses.NumOffenses
+                Operator: <
+                Val: 15.5
+                children:
+                - {Class: Predictor, ID: 'R.0:1.1:1.0:1.0:0', Score: -0.09512755299378337}
+                - {Class: Predictor, ID: 'R.0:1.1:1.0:1.0:1', Score: 1.3711409508970431}
+              - Class: Splitter
+                ID: R.0:1.1:1.0:1.1
+                Key: criminality.offenses.NumOffenses
+                Operator: <
+                Val: 8.5
+                children:
+                - Class: Predictor
+                  ID: R.0:1.1:1.0:1.1:0
+                  Score: -0.2625417739000881
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.1:1.0:1.1:0.0
+                    Key: criminality.person.SkinColor
+                    Operator: Equality
+                    Val: medium
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:1.1:0.0:0', Score: 1.6573122145975037}
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:1.1:0.0:1', Score: -0.29078633766584433}
+                - Class: Predictor
+                  ID: R.0:1.1:1.0:1.1:1
+                  Score: 0.3503326893796203
+                  children:
+                  - Class: Splitter
+                    ID: R.0:1.1:1.0:1.1:1.0
+                    Key: criminality.person.HairColor
+                    Operator: Equality
+                    Val: black
+                    children:
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:1.1:1.0:0', Score: 1.1677648731674335}
+                    - {Class: Predictor, ID: 'R.0:1.1:1.0:1.1:1.0:1', Score: -0.1610656152569408}
+          - Class: Splitter
+            ID: R.0:1.1:1.1
+            Key: criminality.person.HairColor
+            Operator: Equality
+            Val: blond
+            children:
+            - Class: Predictor
+              ID: R.0:1.1:1.1:0
+              Score: 0.691851611880829
+              children:
+              - Class: Splitter
+                ID: R.0:1.1:1.1:0.0
+                Key: criminality.person.IsMale
+                Operator: Equality
+                Val: false
+                children:
+                - {Class: Predictor, ID: 'R.0:1.1:1.1:0.0:0', Score: -0.7079896507516664}
+                - {Class: Predictor, ID: 'R.0:1.1:1.1:0.0:1', Score: 1.486598297541811}
+            - {Class: Predictor, ID: 'R.0:1.1:1.1:1', Score: -0.03454444518255538}
+  - Class: Splitter
+    ID: R.1
+    Key: criminality.person.IsMale
+    Operator: Equality
+    Val: true
+    children:
+    - Class: Predictor
+      ID: R.1:0
+      Score: 0.12355429668318
+      children:
+      - Class: Splitter
+        ID: R.1:0.0
+        Key: criminality.person.EyeColor
+        Operator: Equality
+        Val: other
+        children:
+        - Class: Predictor
+          ID: R.1:0.0:0
+          Score: 0.4930909729463775
+          children:
+          - Class: Splitter
+            ID: R.1:0.0:0.0
+            Key: criminality.person.HairColor
+            Operator: Equality
+            Val: black
+            children:
+            - {Class: Predictor, ID: 'R.1:0.0:0.0:0', Score: 1.7814924632251508}
+            - {Class: Predictor, ID: 'R.1:0.0:0.0:1', Score: -0.11039387749453868}
+        - {Class: Predictor, ID: 'R.1:0.0:1', Score: -0.011118011069609511}
+    - Class: Predictor
+      ID: R.1:1
+      Score: -0.5094758213495653
+      children:
+      - Class: Splitter
+        ID: R.1:1.0
+        Key: criminality.offenses.NumOffenses
+        Operator: <
+        Val: 4.5
+        children:
+        - {Class: Predictor, ID: 'R.1:1.0:0', Score: 0.0005782683361163939}
+        - Class: Predictor
+          ID: R.1:1.0:1
+          Score: 0.5389993034625655
+          children:
+          - Class: Splitter
+            ID: R.1:1.0:1.0
+            Key: criminality.offenses.NumOffenses
+            Operator: <
+            Val: 14.5
+            children:
+            - {Class: Predictor, ID: 'R.1:1.0:1.0:0', Score: -0.11719561354593908}
+            - {Class: Predictor, ID: 'R.1:1.0:1.0:1', Score: 1.4055094943914426}
+      - Class: Splitter
+        ID: R.1:1.1
+        Key: criminality.person.SkinColor
+        Operator: Equality
+        Val: light
+        children:
+        - {Class: Predictor, ID: 'R.1:1.1:0', Score: 1.8106223154968766}
+        - {Class: Predictor, ID: 'R.1:1.1:1', Score: -0.009360749785534101}

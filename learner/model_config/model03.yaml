@@ -1,0 +1,7 @@
+Learner: arboretum.jboost.Learner
+Args:
+   num_iterations: 50
+   cost: 1.0
+   java_bin: java
+   jboost_home: /atlas/spock/jkahn/jboost/jboost-2.1
+   # jboost_home: /usr/local/jboost/jboost-2.1

@@ -1,0 +1,10 @@
+*.pyc
+.DS_Store
+.project
+.pydevproject
+.settings
+.classpath
+pom.xml.versionsBackup
+java/*/target/
+dependency-reduced-pom.xml
+*~
